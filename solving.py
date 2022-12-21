@@ -14,3 +14,19 @@ def solve_with_gradient(k, b, i, C):
     eq = Eq(r - (_alpha * (k*i+b) + (1-_alpha)*C/i), 0)
     s = solve(eq)
     return s[0]
+
+def solve_curve(x, D, A):
+    y = symbols('y', real=True)
+    eq = Eq((x+y)*A*4 + D, A*D*4 + D**3 / (4*x*y))
+    s = solve(eq)
+    return s[1]
+
+def solve_symmetry_const_gradient(x, b, C):
+    y = symbols('y', real=True)
+    _alpha = alpha(x, y)
+
+    eq = Eq(_alpha*(-(x**2+y**2)+b*(x+y)) + 2*(1-_alpha)*C, 2*x*y)
+
+    s = solve(eq)
+    return s[0]
+
