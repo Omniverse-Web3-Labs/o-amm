@@ -170,8 +170,12 @@ def draw():
     plt.style.use("dark_background")
 
     # Animation
+    dy_dx_expr = solving.diff_o_amm_dy_dx(b, initC1)
+
     line = axes.plot(x_symmetry[0], y_symmetry[0], 'o', c='red')[0]
-    text = axes.text(x_symmetry[0], y_symmetry[0], 'Δx= {}, Δy={}'.format('{:,.{}f}'.format(x_symmetry[0], 2), '{:,.{}f}'.format(y_symmetry[0], 2)), c='darkgrey')
+
+    dy_dx = solving.price_o_amm(x_symmetry[0], y_symmetry[0], dy_dx_expr)
+    text = axes.text(x_symmetry[0], y_symmetry[0], 'x= {}, y={}\n Price=dy/dx={}'.format('{:,.{}f}'.format(x_symmetry[0], 2), '{:,.{}f}'.format(y_symmetry[0], 2), '{:,.{}f}'.format(dy_dx, 2)), c='darkgrey')
 
     vline = axes.plot([0, 0], [0, 0], ':', color='lightblue', linewidth =0.8)[0]
     hline = axes.plot([0, 0], [0, 0], ':', color='lightblue', linewidth =0.8)[0]
@@ -182,7 +186,9 @@ def draw():
 
         line.set_data(x_show2, y_show2)
         text.set_position((x_show2, y_show2))
-        text.set_text('Δx= {}, Δy={}'.format('{:,.{}f}'.format(x_show2, 2), '{:,.{}f}'.format(y_show2, 2)))
+
+        dy_dx = solving.price_o_amm(x_show2, y_show2, dy_dx_expr)
+        text.set_text('x= {}, y={}\n Price=dy/dx={}'.format('{:,.{}f}'.format(x_show2, 2), '{:,.{}f}'.format(y_show2, 2), '{:,.{}f}'.format(dy_dx, 2)))
         vline.set_data([x_show2, x_show2], [0, y_show2]);
         hline.set_data([0, x_show2], [y_show2, y_show2]);
 
@@ -193,7 +199,11 @@ def draw():
     # Animation end
 
     writergif = animation.PillowWriter(fps=10)
-    ani.save('./curve.gif',writer=writergif)
+    ani.save('./o-amm-curve.gif',writer=writergif)
+
+    plt.rcParams['animation.ffmpeg_path'] ='./tool/bin/ffmpeg.exe'
+    FFwriter=animation.FFMpegWriter(fps=10, extra_args=['-vcodec', 'libx264'])
+    ani.save("./o-amm-movie.mp4", writer=FFwriter)
 
     plt.show()
 
