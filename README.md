@@ -9,7 +9,7 @@ We recommend you install the [Anaconda](https://www.anaconda.com/).
 * Details of installing `sympy` can be found [here](https://docs.sympy.org/latest/install.html). Note that if this doesn't work, go to command line within the `Anaconda environment` and use `pip` to install it instead.  
 
 ## Source Code
-* The *Equation.1* of `O-AMM` detail mentioned in [Principle of Omniverse AMM](../../docs/Principle%20of%20Omniverse%20AMM.md#equation.1) can be found in [solving.py](./solving.py#L28).
+* The *Equation.1* of `O-AMM` detail mentioned in [Principle of Omniverse AMM](./Principle%20of%20Omniverse%20AMM.md#equation.1) can be found in [solving.py](./solving.py#L28).
 * In [constgrad.py](./constgrad.py) we compared `O-AMM` with `Uniswap` and `Curve`.   
 
 ## Running
@@ -20,3 +20,6 @@ conda activate base
 # run the script
 python.exe ./constgrad.py
 ```
+
+## Details of O-AMM
+A detailed description of the O-AMM model is presented in [Principle of Omniverse AMM](./Principle%20of%20Omniverse%20AMM.md).  
