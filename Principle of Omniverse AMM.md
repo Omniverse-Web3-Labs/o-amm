@@ -74,7 +74,8 @@ We just record the expression of *Equation 1* on-chain, calculate $b$ and $C$ ev
 The way to make out *Equation 1* and *Equation 2* is somewhat mathematical skilled, but I don't want to explain the details at this stage. I will give a detailed idea in the future. In short, it is a combination of some equations that are inverse functions of each other.  
 
 ## Implementation
-In this stage, we have designed and made out a [prototype](./solving.py) of the Omniverse AMM algorithm. 
+* In this stage, we have designed and made out an intuitive [prototype](./solving.py) of the Omniverse AMM algorithm.  
+* Besides, we also provide an [on-chain prototype](https://github.com/xiyu1984/O-AMM-ParaSim) for the `off-chain calculation, and on-chain verification` based on a specific verifiable computation, which can be tested manually through an [operation tutorial](https://github.com/xiyu1984/O-AMM-ParaSim/tree/main/off-chain-calc).
 
 ## Reference
 [1] [white paper-v3](https://uniswap.org/whitepaper-v3.pdf)   
