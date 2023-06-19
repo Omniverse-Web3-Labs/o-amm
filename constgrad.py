@@ -201,9 +201,9 @@ def draw():
     writergif = animation.PillowWriter(fps=10)
     ani.save('./o-amm-curve.gif',writer=writergif)
 
-    plt.rcParams['animation.ffmpeg_path'] ='./tool/bin/ffmpeg.exe'
-    FFwriter=animation.FFMpegWriter(fps=10, extra_args=['-vcodec', 'libx264'])
-    ani.save("./o-amm-movie.mp4", writer=FFwriter)
+    # plt.rcParams['animation.ffmpeg_path'] ='./tool/bin/ffmpeg.exe'
+    # FFwriter=animation.FFMpegWriter(fps=10, extra_args=['-vcodec', 'libx264'])
+    # ani.save("./o-amm-movie.mp4", writer=FFwriter)
 
     plt.show()
 
