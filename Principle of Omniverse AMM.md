@@ -59,6 +59,13 @@ S=\sum{x_i} \\
 
 <img width="196" height="94" alt="image" src="https://github.com/user-attachments/assets/685b25eb-23d0-4d77-a69c-64c9db1a993e" />
 
+$$
+\begin{cases}
+C = \prod_i x_i^{init} \\
+b = n \sqrt[n]{C}
+\end{cases}
+$$
+
 <!--
 $$\left \{ \begin {array}{lcl}
 C=\prod{x_{i}^{init}} \\ 
