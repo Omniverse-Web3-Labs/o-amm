@@ -19,7 +19,14 @@ $$\alpha =\frac{xy}{(\frac{x+y}{2})^2}$$
 The expression of $\alpha$ is the quotient of the geometric mean over arithmetic mean, which is a way to quantify the degree of the difference between $x$ and $y$.  
 $b$ and $C$ is determined by the liquidity size of the initial pool, and every time the liquidity changes (put in or fetch out), they will be re-calculated.  
 
-<img width="300" height="100" alt="image" src="https://github.com/user-attachments/assets/2242393a-7b8d-4abe-aaf2-4b0fcf59b825" />
+<!-- <img width="300" height="100" alt="image" src="https://github.com/user-attachments/assets/2242393a-7b8d-4abe-aaf2-4b0fcf59b825" /> -->
+
+$$
+\begin{cases} 
+C &=& x_{init}\cdot y_{init} \\ 
+b &=& 2\sqrt{C} 
+\end{cases}
+$$
 
 <!--
 $$\left\{ 
@@ -45,7 +52,15 @@ $$MS={\alpha}MS+{\alpha}MSn(b-S)+(1-{\alpha})CS$$
 where:  
 * variables $M$, $S$ and $\alpha$ are as below:  
 
-<img width="449" height="166" alt="image" src="https://github.com/user-attachments/assets/778729a3-bc32-4d71-b304-bd9c0fb631da" />
+<!-- <img width="449" height="166" alt="image" src="https://github.com/user-attachments/assets/778729a3-bc32-4d71-b304-bd9c0fb631da" /> -->
+
+$$
+\begin{cases}
+{\alpha}=\frac{\prod{x_i}}{(\frac{\sum{x_i}}{n})^n}=\frac{M}{(\frac{S}{n})^n} \\  
+M=\prod{x_i} \\  
+S=\sum{x_i} \\  
+\end{cases}
+$$
 
 <!--
 $$\left \{ \begin {array}{lcl}
@@ -57,7 +72,7 @@ S=\sum{x_i} \\
 
 * constans $C$ and $b$ are as below, which are only determined by the initial value of the reserves and every time the liquidity is deposited or withdrawn:  
 
-<img width="196" height="94" alt="image" src="https://github.com/user-attachments/assets/685b25eb-23d0-4d77-a69c-64c9db1a993e" />
+<!-- <img width="196" height="94" alt="image" src="https://github.com/user-attachments/assets/685b25eb-23d0-4d77-a69c-64c9db1a993e" /> -->
 
 $$
 \begin{cases}
