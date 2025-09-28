@@ -19,10 +19,16 @@ $$\alpha =\frac{xy}{(\frac{x+y}{2})^2}$$
 The expression of $\alpha$ is the quotient of the geometric mean over arithmetic mean, which is a way to quantify the degree of the difference between $x$ and $y$.  
 $b$ and $C$ is determined by the liquidity size of the initial pool, and every time the liquidity changes (put in or fetch out), they will be re-calculated.  
 
-$$\left \{ \begin {array}{lcl}
-C = x_{init}\cdot y_{init}\\
-b = 2\sqrt{C}
-\end{array}\right.$$  
+
+$$
+\left\{
+\begin{array}{lcl}
+C &=& x_{init}\cdot y_{init} \\[6pt]
+b &=& 2\sqrt{C}
+\end{array}
+\right.
+$$
+
 
 The following *Figure 1* shows the difference between `O-AMM` and other AMM mechanisms, the related source code can be found [here](./constgrad.py):  
 ![img](./o-amm-curve.gif)  
