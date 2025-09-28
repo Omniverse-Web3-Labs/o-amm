@@ -19,16 +19,15 @@ $$\alpha =\frac{xy}{(\frac{x+y}{2})^2}$$
 The expression of $\alpha$ is the quotient of the geometric mean over arithmetic mean, which is a way to quantify the degree of the difference between $x$ and $y$.  
 $b$ and $C$ is determined by the liquidity size of the initial pool, and every time the liquidity changes (put in or fetch out), they will be re-calculated.  
 
+<img width="300" height="100" alt="image" src="https://github.com/user-attachments/assets/2242393a-7b8d-4abe-aaf2-4b0fcf59b825" />
 
-$$
-\left\{
-\begin{array}{lcl}
-C &=& x_{init}\cdot y_{init} \\[6pt]
-b &=& 2\sqrt{C}
-\end{array}
-\right.
-$$
-
+<!--
+$$\left\{ 
+\begin {array}{lcl} 
+C &=& x_{init}\cdot y_{init} \\ 
+b &=& 2\sqrt{C} 
+\end{array} \right.$$
+-->
 
 The following *Figure 1* shows the difference between `O-AMM` and other AMM mechanisms, the related source code can be found [here](./constgrad.py):  
 ![img](./o-amm-curve.gif)  
@@ -46,18 +45,26 @@ $$MS={\alpha}MS+{\alpha}MSn(b-S)+(1-{\alpha})CS$$
 where:  
 * variables $M$, $S$ and $\alpha$ are as below:  
 
+<img width="449" height="166" alt="image" src="https://github.com/user-attachments/assets/778729a3-bc32-4d71-b304-bd9c0fb631da" />
+
+<!--
 $$\left \{ \begin {array}{lcl}
 {\alpha}=\frac{\prod{x_i}}{(\frac{\sum{x_i}}{n})^n}=\frac{M}{(\frac{S}{n})^n} \\  
 M=\prod{x_i} \\  
 S=\sum{x_i} \\  
 \end{array}\right.$$
+-->
 
 * constans $C$ and $b$ are as below, which are only determined by the initial value of the reserves and every time the liquidity is deposited or withdrawn:  
 
+<img width="196" height="94" alt="image" src="https://github.com/user-attachments/assets/685b25eb-23d0-4d77-a69c-64c9db1a993e" />
+
+<!--
 $$\left \{ \begin {array}{lcl}
 C=\prod{x_{i}^{init}} \\ 
 b=n\sqrt[n]{C} 
 \end{array}\right.$$
+-->
 
 **Note that:**  
 * When a swap happens(suppose we use $x_i$ to exchange $x_j$), according to the [equation.2](#equation.2), we can express $M$ and $S$ with just one variable $x_j$, and solving against $x_j$ will be a very easy procedure, just one step. Much easier than what happened in [curve V2](https://classic.curve.fi/files/crypto-pools-paper.pdf).  
